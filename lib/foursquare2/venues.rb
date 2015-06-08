@@ -29,6 +29,13 @@ module Foursquare2
       end
       return_error_or_body(response, response.body.response)
     end
+    
+    def explore_venues(options={})
+      response = connection.get do |req|
+        req.url "venues/explore", options
+      end
+      return_error_or_body(response, response.body.response)
+    end
 
     # Search for trending venues
     #
